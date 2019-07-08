@@ -1,1 +1,11 @@
-theme: jekyll-theme-cayman
+# Site settings
+title: John Marion
+email: john@jmarion.dev
+description:
+baseurl: ""
+url: "https://jmarion.dev" # the base hostname & protocol for your site
+twitter_username: jmariondev
+github_username:  jmariondev
+
+# Build settings
+markdown: kramdown
