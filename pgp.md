@@ -18,7 +18,9 @@ gpg:               imported: 1
 This key is also available and actively updated on
 <https://sks-keyservers.net/> if HKP(S) is more your preference.
 
-## John Marion \<john@jmarion.dev\> (`4FD8 D6EB BAB8 CC10 1998  E862 46EF F9CB 24CC 43F7`) ##
+## John Marion \<john@jmarion.dev\> ##
+
+`4FD8 D6EB BAB8 CC10 1998  E862 46EF F9CB 24CC 43F7`
 
 ```
 
