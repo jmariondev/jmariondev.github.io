@@ -6,7 +6,8 @@ title: PGP
 
 ## Importing ##
 
-You can pipe this page straight into `gpg --import`:
+You can pipe this page straight into `gpg --import` (be sure to verify the
+fingerprint matches the one below after doing so):
 
 ```bash
 $ curl https://jmarion.dev/pgp/ | gpg --import
