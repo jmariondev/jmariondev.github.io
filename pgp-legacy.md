@@ -2,6 +2,7 @@
 permalink: /pgp-legacy/
 layout: page
 title: Former PGP Keys
+hidden: true
 ---
 
 # Former PGP Keys #
