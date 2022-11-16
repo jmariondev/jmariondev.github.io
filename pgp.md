@@ -16,24 +16,30 @@ gpg: Total number processed: 1
 gpg:               imported: 1
 ```
 
+*(Yes. It would be possible for someone to either modify the content of this*
+*page on GitHub, or even MitM your requests. If you need better validation,*
+*validate the fingerprint with me through some other channel!)*
+
 ## John Marion \<john@jmarion.dev\> ##
 
 ```
-pub   ed25519/0x45A241CBC3927269 2021-09-26 [SCA] [expires: 2022-09-26]
+pub   ed25519/0x45A241CBC3927269 2021-09-26 [SCA] [expires: 2023-03-30]
       Key fingerprint = 7747 AC6D 60A7 0DA3 AD0B  C5C9 45A2 41CB C392 7269
+uid                             John Marion <john@jmarion.dev>
+sub   cv25519/0x1266B253CC3B1FB4 2021-09-26 [E] [expires: 2023-03-30]
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mDMEYU+4ABYJKwYBBAHaRw8BAQdAqQion/xjQlUSkVbZdpM1MxAhXsOv556zEC73
-hXVFJpW0HkpvaG4gTWFyaW9uIDxqb2huQGptYXJpb24uZGV2PoiWBBMWCAA+BQkB
-4TOABQsJCAcCBhUKCQgLAgQWAgMBAh4BAheAFiEEd0esbWCnDaOtC8XJRaJBy8OS
-cmkFAmFixpYCGyMACgkQRaJBy8OScmnjuAEAwQ3a0aKHWj2ncxs6yNCljPXkl4Ru
-xxFwpyc2xO74mS8BAOnyCf08TjTPh8C5LAEJB6CaGD7etAaPmeAapQT9LfMLuDgE
+hXVFJpW0HkpvaG4gTWFyaW9uIDxqb2huQGptYXJpb24uZGV2PoiWBBMWCAA+BQsJ
+CAcCBhUKCQgLAgQWAgMBAh4BAheAAhsjFiEEd0esbWCnDaOtC8XJRaJBy8OScmkF
+AmM3gwAFCQLVGQAACgkQRaJBy8OScmnUUQEApGef4VrQRojk1nRCWJ9rB2KVMQWy
+SItNtw09oMMnLt4A/3cJz3LEPZlebFanCkyTnzk+PDNZ62iR4mUopxMr6PsBuDgE
 YU+4ABIKKwYBBAGXVQEFAQEHQNOt2U5VTQuClDiVKwzS/fuQbAUP97bRiLgg4Xf5
-+U86AwEIB4h+BBgWCAAmFiEEd0esbWCnDaOtC8XJRaJBy8OScmkFAmFPuAACGwwF
-CQHhM4AACgkQRaJBy8OScmnDDQD9Hv8fBGJ4WXp8hazEEOoemKlMN+DzwBdsvRLp
-MbKjH6wA/0VSIKD+FlATXGRIFrKZn48laWAfqYe3QdU1bM1fF90C
-=kJlI
++U86AwEIB4h+BBgWCAAmAhsMFiEEd0esbWCnDaOtC8XJRaJBy8OScmkFAmM3gwAF
+CQLVGQAACgkQRaJBy8OScmkWbgD+IC9Y2letW1LvJAouw6rycaj+uG4PpnXqEX3g
+8WeRlP8BAKlTJ3mXMrue3yGRZc2huJ9yzLbRWb2uKvj4HKvaWkkC
+=Ntuy
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
