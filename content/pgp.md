@@ -18,7 +18,7 @@ $ gpg --locate-keys john@jmarion.dev
 $ sq network wkd search john@jmarion.dev
 ```
 
-Or fetch the key directly:
+Or [download the key directly](/pgp-key.asc):
 
 ```bash
 $ curl -s https://jmarion.dev/pgp-key.asc | gpg --import
