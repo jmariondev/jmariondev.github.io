@@ -1,0 +1,10 @@
+/* TEAM */
+Name: John Marion
+Site: https://jmarion.dev
+Contact: john@jmarion.dev
+Mastodon: https://infosec.exchange/@jmarion
+
+/* SITE */
+Generator: Zola
+Hosting: GitHub Pages
+Standards: HTML5, CSS3

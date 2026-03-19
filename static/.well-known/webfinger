@@ -1,0 +1,19 @@
+{
+  "subject": "acct:jmarion@jmarion.dev",
+  "aliases": [
+    "https://infosec.exchange/@jmarion",
+    "https://infosec.exchange/users/jmarion"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://infosec.exchange/@jmarion"
+    },
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://infosec.exchange/users/jmarion"
+    }
+  ]
+}

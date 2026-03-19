@@ -1,0 +1,28 @@
+base_url = "https://jmarion.dev"
+title = "John Marion"
+description = "Personal site of John Marion"
+default_language = "en"
+compile_sass = true
+build_search_index = false
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+minify_html = true
+
+taxonomies = [
+    { name = "tags", feed = true },
+]
+
+[markdown]
+insert_anchor_links = "heading"
+
+[markdown.highlighting]
+enabled = true
+theme = "ayu-dark"
+
+[extra]
+handle = "@jmariondev"
+author = "John Marion"
+email = "john@jmarion.dev"
+github_username = "jmariondev"
+gitlab_username = "jmariondev"
+mastodon_url = "https://infosec.exchange/@jmarion"

@@ -1,0 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Contact: mailto:john@jmarion.dev
+Encryption: https://jmarion.dev/pgp-key.asc
+Expires: 2027-03-17T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://jmarion.dev/.well-known/security.txt
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQR3R6xtYKcNo60LxclFokHLw5JyaQUCabvMZAAKCRBFokHLw5Jy
+aXzuAP9ObdA62PQ3Sckbtp45T88N9fQ3yDwP+bsTJyRq77tiJQD/TBFX2LK6Egln
+tvqUGT7zmCz17onHglRRGXdYQbHbAw0=
+=mb9K
+-----END PGP SIGNATURE-----

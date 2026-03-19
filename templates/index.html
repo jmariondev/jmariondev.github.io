@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="intro">
+    <img class="avatar" src="{{ get_url(path='avatar.png') }}" alt="John Marion" width="96" height="96">
+    <div class="intro-text">
+        {{ section.content | safe }}
+    </div>
+</div>
+
+{% set blog = get_section(path="blog/_index.md") %}
+{% for post in blog.pages | slice(end=5) %}
+<article class="post-preview">
+    <header>
+        <h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
+        <div class="post-meta">
+            <time datetime="{{ post.date }}">{{ post.date | date(format="%Y-%m-%d") }}</time>
+            {% if post.reading_time %} &middot; {{ post.reading_time }} min read{% endif %}
+            {% if post.taxonomies.tags %}
+                &middot;
+                {% for tag in post.taxonomies.tags %}
+                    <a class="tag" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">#{{ tag }}</a>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </header>
+    {% if post.summary %}
+        {{ post.summary | safe }}
+        <a class="read-more" href="{{ post.permalink }}">Continue reading &rarr;</a>
+    {% else %}
+        {{ post.content | safe }}
+    {% endif %}
+</article>
+{% endfor %}
+
+{% if blog.pages | length > 5 %}
+<div class="all-posts">
+    <a href="{{ get_url(path='@/blog/_index.md') }}">All posts &rarr;</a>
+</div>
+{% endif %}
+{% endblock content %}

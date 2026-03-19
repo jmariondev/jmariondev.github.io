@@ -1,0 +1,5 @@
+pub   ed25519/45A241CBC3927269 2021-09-26 [SCA] [expires: 2027-03-17]
+      Key fingerprint = 7747 AC6D 60A7 0DA3 AD0B  C5C9 45A2 41CB C392 7269
+uid                 [ultimate] John Marion <john@jmarion.dev>
+sub   cv25519/1266B253CC3B1FB4 2021-09-26 [E] [expires: 2027-03-17]
+      Key fingerprint = B1A7 3221 29D9 1C77 16BA  E07A 1266 B253 CC3B 1FB4

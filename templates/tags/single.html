@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}#{{ term.name }} | {{ config.title }}{% endblock title %}
+
+{% block content %}
+<h1><span class="tag" style="font-size: inherit;">#{{ term.name }}</span></h1>
+
+{% if term.pages | length > 0 %}
+<ul class="post-list">
+    {% for post in term.pages %}
+    <li>
+        <time datetime="{{ post.date }}">{{ post.date | date(format="%Y-%m-%d") }}</time>
+        <a href="{{ post.permalink }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No posts with this tag yet.</p>
+{% endif %}
+{% endblock content %}

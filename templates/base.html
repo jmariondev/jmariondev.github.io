@@ -1,0 +1,113 @@
+{% import "macros/icons.html" as icons %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <meta name="description" content="{{ config.description }}">
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+    <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path='atom.xml') }}">
+    <link rel="me" href="{{ config.extra.mastodon_url }}">
+    <link rel="me" href="https://github.com/{{ config.extra.github_username }}">
+    <link rel="me" href="https://gitlab.com/{{ config.extra.gitlab_username }}">
+    <link rel="me" href="mailto:{{ config.extra.email }}">
+    <link rel="pgpkey" href="{{ get_url(path='.well-known/openpgpkey/jmarion.dev/hu/wwq7w9d96wfsd4zkytndq84kpkjod3eb') }}">
+    <link rel="author" href="{{ get_url(path='humans.txt') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ config.base_url }}" class="site-title">{{ config.extra.handle }}</a>
+        <div class="nav-links">
+            <a href="{{ get_url(path='@/blog/_index.md') }}">Blog</a>
+            <a href="{{ get_url(path='/tags/') }}">Tags</a>
+            <a href="{{ get_url(path='@/pgp.md') }}">PGP</a>
+            <a href="{{ get_url(path='atom.xml') }}">Feed</a>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        <main>
+            {% block content %}{% endblock content %}
+        </main>
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Links</h3>
+                <ul class="sidebar-links">
+                    <li>
+                        <a class="icon-github" href="https://github.com/{{ config.extra.github_username }}" rel="me">
+                            {{ icons::github() }}GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon-gitlab" href="https://gitlab.com/{{ config.extra.gitlab_username }}" rel="me">
+                            {{ icons::gitlab() }}GitLab
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon-mastodon" href="{{ config.extra.mastodon_url }}" rel="me">
+                            {{ icons::mastodon() }}Mastodon
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3>Elsewhere</h3>
+                <ul class="sidebar-links">
+                    <li>
+                        <a class="icon-key" href="{{ get_url(path='@/pgp.md') }}">
+                            {{ icons::key() }}PGP Key
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon-email" href="mailto:{{ config.extra.email }}">
+                            {{ icons::email() }}{{ config.extra.email }}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon-rss" href="{{ get_url(path='atom.xml') }}">
+                            {{ icons::rss() }}Atom Feed
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <div class="social-links">
+            <a class="icon-github" href="https://github.com/{{ config.extra.github_username }}" title="GitHub" rel="me">
+                {{ icons::github() }}
+            </a>
+            <a class="icon-gitlab" href="https://gitlab.com/{{ config.extra.gitlab_username }}" title="GitLab" rel="me">
+                {{ icons::gitlab() }}
+            </a>
+            <a class="icon-mastodon" href="{{ config.extra.mastodon_url }}" title="Mastodon" rel="me">
+                {{ icons::mastodon() }}
+            </a>
+            <a class="icon-email" href="mailto:{{ config.extra.email }}" title="Email">
+                {{ icons::email() }}
+            </a>
+            <a class="icon-rss" href="{{ get_url(path='atom.xml') }}" title="Atom Feed">
+                {{ icons::rss() }}
+            </a>
+        </div>
+        <p>&copy; {{ config.extra.author }} &middot; Powered by <a href="https://www.getzola.org/">Zola</a></p>
+    </footer>
+    <script>
+    document.querySelectorAll('pre').forEach(pre => {
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.textContent = 'Copy';
+        btn.addEventListener('click', () => {
+            const clone = pre.cloneNode(true);
+            clone.querySelectorAll('.giallo-ln, .copy-btn').forEach(el => el.remove());
+            const text = clone.textContent.replace(/\n$/, '');
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy', 1500);
+            });
+        });
+        pre.appendChild(btn);
+    });
+    </script>
+</body>
+</html>

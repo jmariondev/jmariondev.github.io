@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Blog | {{ config.title }}{% endblock title %}
+
+{% block content %}
+<h1>Blog</h1>
+
+{% set all_tags = get_taxonomy(kind="tags") %}
+{% if all_tags.items | length > 0 %}
+<div class="tag-filter">
+    {% for tag in all_tags.items %}
+        <a class="tag" href="{{ tag.permalink }}">#{{ tag.name }}</a>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if section.pages | length > 0 %}
+    {% set_global current_year = 0 %}
+    {% for post in section.pages %}
+        {% set post_year = post.date | date(format="%Y") | int %}
+        {% if post_year != current_year %}
+            {% if current_year != 0 %}
+                </ul></div>
+            {% endif %}
+            {% set_global current_year = post_year %}
+            <div class="year-group">
+            <h2>{{ post_year }}</h2>
+            <ul class="post-list">
+        {% endif %}
+        <li>
+            <time datetime="{{ post.date }}">{{ post.date | date(format="%m-%d") }}</time>
+            <a href="{{ post.permalink }}">{{ post.title }}</a>
+            {% if post.taxonomies.tags %}
+                {% for tag in post.taxonomies.tags %}
+                    <a class="tag" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">#{{ tag }}</a>
+                {% endfor %}
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul></div>
+{% else %}
+<p>No posts yet. Check back soon!</p>
+{% endif %}
+{% endblock content %}
