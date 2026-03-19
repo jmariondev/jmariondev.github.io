@@ -21,11 +21,15 @@ echo "==> Updating pgp-key.asc"
 gpg --armor --export --export-options export-minimal "$KEY_UID" \
     > "$REPO_ROOT/static/pgp-key.asc"
 
-# WKD binary key
+# WKD binary key (advanced method: openpgpkey.jmarion.dev, direct method: jmarion.dev)
 echo "==> Updating WKD binary"
 mkdir -p "$REPO_ROOT/static/.well-known/openpgpkey/jmarion.dev/hu"
+mkdir -p "$REPO_ROOT/static/.well-known/openpgpkey/hu"
 gpg --no-armor --export --export-options export-minimal "$KEY_UID" \
     > "$REPO_ROOT/static/.well-known/openpgpkey/jmarion.dev/hu/$WKD_HASH"
+cp "$REPO_ROOT/static/.well-known/openpgpkey/jmarion.dev/hu/$WKD_HASH" \
+    "$REPO_ROOT/static/.well-known/openpgpkey/hu/$WKD_HASH"
+touch "$REPO_ROOT/static/.well-known/openpgpkey/policy"
 
 # Update security.txt expiry to match key expiry
 EXPIRY=$(gpg --keyid-format long --with-fingerprint --list-keys "$KEY_UID" 2>/dev/null \
